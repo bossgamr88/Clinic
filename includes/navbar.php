@@ -6,7 +6,7 @@
   <div class="sidebar-brand-icon rotate-n-15">
     <i class="fas fa-briefcase-medical"></i>
   </div>
-  <div class="sidebar-brand-text mx-3">คลินิกน-หมอขิง</sup></div>
+  <div class="sidebar-brand-text mx-3">คลินิกหมอณัฐ-หมอขิง</sup></div>
 </a>
 
 <!-- Divider -->
@@ -28,9 +28,15 @@
 </li>
 
 <li class="nav-item">
-  <a class="nav-link" href="register.php">
-    <i class="fas fa-fw fa-chart-area"></i>
+  <a class="nav-link" href="user.php">
+    <i class="fa fa-user-md"></i>
     <span>Admin Profile</span></a>
+</li>
+
+<li class="nav-item">
+  <a class="nav-link" href="patient_list.php">
+    <i class="far fa-file-alt"></i>
+    <span>รายชื่อคนไข้</span></a>
 </li>
 
 
