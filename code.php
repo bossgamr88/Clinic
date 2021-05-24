@@ -1,7 +1,7 @@
 <?php 
-include('security.php');
+//include('security.php');
 
-session_start();
+// session_start();
     $connection = mysqli_connect("localhost","root","","clinic");
 
     if(isset($_POST['registerbtn'])){
@@ -68,15 +68,18 @@ session_start();
      {
         $firstname = $_POST['firstname'];
         $lastname = $_POST['lastname'];
-        $IDcard = $_POST['ID_Card'];
-        $Age = $_POST['Age'];
-        $Tel = $_POST['Tel'];
-        $Congenital = $_POST['Congenital'];
-        $Address = $_POST['Address'];
-        $DrugAllergy = $_POST['DrugAllergy'];
-        $History = $_POST['History'];
+        $IDcard = $_POST['id_card'];
+        $Age = $_POST['age'];
+        $Tel = $_POST['tel'];
+        $Congenital = $_POST['congenital'];
+        $Address = $_POST['address'];
+        $DrugAllergy = $_POST['drugallergy'];
+        $History = $_POST['history'];
+        $Keeper = $_POST['keeper'];
 
-        $query = "INSERT INTO data_patient(firstname,lastname,ID_Card,Age,Tel,Congenital,Address,DrugAllergy,History) VALUES ('$firstname','$lastname','$IDcard','$Age','$Tel','$Congenital','$Address',,'$DrugAllergy','$History')";
+        $query = "INSERT INTO data_patient(firstname, lastname, id_card, age, tel, congenital, address, 
+        drugallergy, history, keeper) 
+        VALUES ('$firstname','$lastname','$IDcard','$Age','$Tel','$Congenital','$Address','$DrugAllergy','$History','$Keeper')";
         $query_run = mysqli_query($connection,$query);  
             if($query_run){
                 // echo "Saved"; 

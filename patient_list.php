@@ -42,31 +42,35 @@
                             </div>
                             <div class="form-group">
                                 <label>รหัสบัตรประชาชน</label>
-                                <input type="text" name="ID_Card" class="form-control" placeholder="กรุณากรอกรหัสบัตรประชาชน">
+                                <input type="text" name="id_card" class="form-control" placeholder="กรุณากรอกรหัสบัตรประชาชน">
                             </div>
                             <div class="form-group">
                                 <label>อายุ</label>
-                                <input type="text" name="Age" class="form-control" placeholder="กรุณากรอกอายุ">
+                                <input type="text" name="age" class="form-control" placeholder="กรุณากรอกอายุ">
                             </div>
                             <div class="form-group">
                                 <label>เบอร์โทร</label>
-                                <input type="text" name="Tel" class="form-control" placeholder="กรุณากรอกเบอร์โทร">
+                                <input type="text" name="tel" class="form-control" placeholder="กรุณากรอกเบอร์โทร">
                             </div>
                             <div class="form-group">
                                 <label>โรคประจำตัว</label>
-                                <input type="text" name="Congenital" class="form-control" placeholder="กรุณากรอกข้อมูลโรคประจำตัว(ถ้ามี)">
+                                <input type="text" name="congenital" class="form-control" placeholder="กรุณากรอกข้อมูลโรคประจำตัว(ถ้ามี)">
                             </div>
                             <div class="form-group">
                                 <label>ที่อยู่</label>
-                                <input type="text" name="Address" class="form-control" placeholder="กรุณากรอกที่อยู่">
+                                <input type="text" name="address" class="form-control" placeholder="กรุณากรอกที่อยู่">
                             </div>
                             <div class="form-group">
                                 <label>การแพ้ยา</label>
-                                <input type="text" name="DrugAllergy" class="form-control" placeholder="กรุณากรอกข้อมูลการแพ้ยา(ถ้ามี)">
+                                <input type="text" name="drugallergy" class="form-control" placeholder="กรุณากรอกข้อมูลการแพ้ยา(ถ้ามี)">
                             </div>
                             <div class="form-group">
                                 <label>ประวัติการรักษา</label>
-                                <input type="text" name="History" class="form-control" placeholder="กรุณากรอกประวัติการรักษา">
+                                <input type="text" name="history" class="form-control" placeholder="กรุณากรอกประวัติการรักษา">
+                            </div>
+                            <div class="form-group">
+                                <label>ผู้ตรวจ</label>
+                                <input type="text" name="keeper" class="form-control" placeholder="กรุณากรอกชื่อผู้ตรวจ">
                             </div>
                             <!-- <div class="form-group">
                                 <label>อัพโหลดภาพเพิ่มเติม</label>
@@ -101,7 +105,6 @@
                      <table class="table">
                         <thead>
                           <tr>
-                            <th scope="col">เลขประจำตัว</th>
                             <th scope="col">ชื่อ</th>
                             <th scope="col">นามสกุล</th>
                             <th scope="col">รหัสบัตรประชาชน</th>
@@ -122,26 +125,25 @@
                                 while($row = mysqli_fetch_assoc($query_run)){
                         ?>
                               <tr>
-                              <td><?php echo $row['ID']; ?></td>
                                 <td><?php echo $row['firstname']; ?></td>
                                 <td><?php echo $row['lastname']; ?></td>
-                                <td><?php echo $row['ID_Card']; ?></td>
-                                <td><?php echo $row['Age'];  ?></td>
-                                <td><?php echo $row['Tel'];  ?></td>
-                                <td><?php echo $row['Congenital'];  ?></td>
-                                <td><?php echo $row['Address'];  ?></td>
-                                <td><?php echo $row['DrugAllergy'];  ?></td>
-                                <td><?php echo $row['History'];  ?></td>
-                                <td><?php echo $row['Keeper'];  ?></td>
+                                <td><?php echo $row['id_card']; ?></td>
+                                <td><?php echo $row['age'];  ?></td>
+                                <td><?php echo $row['tel'];  ?></td>
+                                <td><?php echo $row['congenital'];  ?></td>
+                                <td><?php echo $row['address'];  ?></td>
+                                <td><?php echo $row['drugallergy'];  ?></td>
+                                <td><?php echo $row['history'];  ?></td>
+                                <td><?php echo $row['keeper'];  ?></td>
                                 <td>
                                   <form action="register_edit.php" method="post">
-                                    <input type="hidden" name="edit_id" value="<?php echo $row['username']; ?>" >
+                                    <input type="hidden" name="edit_id" value="<?php echo $row['ID']; ?>" >
                                     <button type="submit" name="edit_btn" class="btn btn-success"> EDIT</button>
                                   </form>
                                 </td>
                                 <td>
                                   <form action="code.php" method="post">
-                                      <input type="hidden" name="delete_id" value="<?php echo $row['username']; ?>">
+                                      <input type="hidden" name="delete_id" value="<?php echo $row['ID']; ?>">
                                       <button type="submit" name="delete_btn" class="btn btn-danger"> DELETE</button>
                                   </form>      
                                 </td>
