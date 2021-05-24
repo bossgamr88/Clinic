@@ -7,7 +7,7 @@
                 <div class="container-fluid"> 
                 <!-- Page Heading -->
                 <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Patient List
+                  <h6 class="m-0 font-weight-bold text-primary">รายชื่อข้อมูลคนไข้
                           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addpatient">
                             เพิ่มข้อมูลคนไข้
                           </button>

@@ -47,17 +47,17 @@
          if($usertypes['type'] == "admin")
          {
              $_SESSION['username'] = $username_login;
-             header('Location: user.php');
+             header('Location: dashboard.php');
          }
          else if($usertypes['type'] == "user")
          {
              $_SESSION['username'] = $username_login;
-             header('Location: ../index.html');
+             header('Location: ./users/user_page.php');
          }
          else
          {
              $_SESSION['status'] = "Email id / Password is Invalid";
-             header('Location: login.html');
+             header('Location: login.php');
          }
         
      }
