@@ -86,7 +86,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="submit" name="data_patient_btn" class="btn btn-primary">Save</button>
+                            <button type="submit" name="patient_btn" class="btn btn-primary">Save</button>
                         </div>
                       </form>
 
@@ -156,5 +156,5 @@
                       </table>
                 </div>
 
-<?php include "./includes/scritp.php" ?>
+<?php include "./includes/scripts.php" ?>
 <?php include "./includes/footer.php" ?>

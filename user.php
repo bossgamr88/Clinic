@@ -110,5 +110,5 @@
                       </table>
                 </div>
 
-<?php include "./includes/scritp.php" ?>
+<?php include "./includes/scripts.php" ?>
 <?php include "./includes/footer.php" ?>

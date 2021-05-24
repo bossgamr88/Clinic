@@ -18,7 +18,7 @@ session_start();
             if($query_run){
                 // echo "Saved"; 
                 $_SESSION['success'] = "Admin Profile Added";
-                header('Location: login.php');
+                header('Location: user.php');
             }
             else
             {
@@ -47,7 +47,7 @@ session_start();
          if($usertypes['type'] == "admin")
          {
              $_SESSION['username'] = $username_login;
-             header('Location: index.html');
+             header('Location: user.php');
          }
          else if($usertypes['type'] == "user")
          {
@@ -64,7 +64,7 @@ session_start();
 
 
      //Add data Patient
-     if(isset($_POST['data_patient_btn']))
+     if(isset($_POST['patient_btn']))
      {
         $firstname = $_POST['firstname'];
         $lastname = $_POST['lastname'];
