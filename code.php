@@ -1,7 +1,7 @@
 <?php 
-//include('security.php');
+include('security.php');
 
-// session_start();
+session_start();
     $connection = mysqli_connect("localhost","root","","clinic");
 
     if(isset($_POST['registerbtn'])){
@@ -18,7 +18,7 @@
             if($query_run){
                 // echo "Saved"; 
                 $_SESSION['success'] = "Admin Profile Added";
-                header('Location: user.php');
+                header('Location: admin_user.php');
             }
             else
             {
@@ -47,7 +47,7 @@
          if($usertypes['type'] == "admin")
          {
              $_SESSION['username'] = $username_login;
-             header('Location: dashboard.php');
+             header('Location: ./dashboard.php');
          }
          else if($usertypes['type'] == "user")
          {
@@ -92,6 +92,65 @@
                 $_SESSION['status'] = "Admin Profile Added";
                 header('Location: register.php');
             }
+    }
+
+
+     // Update data patient
+     if(isset($_POST['updatebtn']))
+     {
+         $id = $_POST['edit_id'];
+         $firstname = $_POST['edit_firstname'];
+         $lastname = $_POST['edit_lastname'];
+         $username = $_POST['edit_username'];
+         $password = $_POST['edit_password'];
+         $type = $_POST['type'];
+         
+         $query = "UPDATE data_user SET firstname='$firstname',lastname='$lastname',username='$username',password='$password'
+         ,type='$type' WHERE ID='$id' ";
+         $query_run = mysqli_query($connection,$query);
+ 
+         if($query_run )
+         {
+             $_SESSION['success'] = "Your Data is Updated";
+             header('Location: admin_users.php');
+         }
+         else
+         {
+             $_SESSION['status'] = "Your Data is NOT Updated";
+             header('Location: register.php');
+         }
+     }
+
+
+      // Update data patient
+    if(isset($_POST['updatebtn_patient']))
+    {
+        $id = $_POST['edit_id_patient'];
+        $firstname = $_POST['edit_firstname'];
+        $lastname = $_POST['edit_lastname'];
+        $idcard = $_POST['edit_idcard'];
+        $age = $_POST['edit_age'];
+        $tel = $_POST['edit_tel'];
+        $congenital = $_POST['edit_congenital'];
+        $address = $_POST['edit_address'];
+        $drugallergy = $_POST['edit_drugallergy'];
+        $history = $_POST['edit_history'];
+        $keeper = $_POST['edit_keeper'];
+        
+        $query = "UPDATE data_patient SET firstname='$firstname',lastname='$lastname',id_card='$idcard',age='$age',tel='$tel'
+        ,congenital='$congenital',address='$address',drugallergy='$drugallergy',history='$history',keeper='$keeper' WHERE ID='$id' ";
+        $query_run = mysqli_query($connection,$query);
+
+        if($query_run )
+        {
+            $_SESSION['success'] = "Your Data is Updated";
+            header('Location: patient_list.php');
+        }
+        else
+        {
+            $_SESSION['status'] = "Your Data is NOT Updated";
+            header('Location: register.php');
+        }
     }
 
  
