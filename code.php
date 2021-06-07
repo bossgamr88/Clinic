@@ -18,7 +18,7 @@ session_start();
             if($query_run){
                 // echo "Saved"; 
                 $_SESSION['success'] = "Admin Profile Added";
-                header('Location: admin_user.php');
+                header('Location: admin_users.php');
             }
             else
             {
@@ -52,7 +52,7 @@ session_start();
          else if($usertypes['type'] == "user")
          {
              $_SESSION['username'] = $username_login;
-             header('Location: ./users/user_page.php');
+             header('Location: ./users/patient_list.php');
          }
          else
          {

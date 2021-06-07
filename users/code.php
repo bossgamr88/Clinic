@@ -52,7 +52,7 @@ include('security.php');
          else if($usertypes['type'] == "user")
          {
              $_SESSION['username'] = $username_login;
-             header('Location: ./user_page.php');
+             header('Location: ./patient_list.php');
          }
          else
          {
