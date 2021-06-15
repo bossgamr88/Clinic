@@ -50,7 +50,7 @@
     
         if(isset($_POST["submit1"]))
         {
-            mysqli_query($link,"INSERT INTO student_registration (`firstname`, `lastname`, `username`, `password`, `email`, `contract`, `sem`, `enrollmentno`) values('$_POST[firstname]', '$_POST[lastname]', '$_POST[username]', '$_POST[password]', '$_POST[email]','$_POST[contract]', '$_POST[sem]', '$_POST[enrollmentno]')")
+            mysqli_query($link,"INSERT INTO student_registration (`firstname`, `lastname`, `username`, `password`, `email`, `contract`, `sem`, `enrollmentno`,`status`) values('$_POST[firstname]', '$_POST[lastname]', '$_POST[username]', '$_POST[password]', '$_POST[email]','$_POST[contract]', '$_POST[sem]', '$_POST[enrollmentno]','no')")
         ?>
             <div class="alert alert-success col-lg-12 col-lg-push-0">
                 Registration successfully, You will get email when your account is approved

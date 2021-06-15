@@ -1,4 +1,8 @@
-<?php include "connection.php"; ?>
+<?php 
+    include "connection.php"; 
+    
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -81,7 +85,7 @@
             {
     ?>
             <script type="text/javascript">
-            window.location="aa.php";
+            window.location="display_student_info.php";
             </script>
     <?php
             }
